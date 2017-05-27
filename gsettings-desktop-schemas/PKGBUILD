@@ -40,7 +40,7 @@ package() {
   cd ../snowdrop-gnome-schema-override
   cp org.gnome.schema.override "$pkgdir/usr/share/glib-2.0/schemas/" 
   cp org.gnome.desktop.background.gschema.xml "$pkgdir/usr/share/glib-2.0/schemas/"
-  install -m644 org.gnome.desktop.interface.gschema.xml $pkgdir/usr/share/glib-2.0/schemas
+  cp org.gnome.desktop.interface.gschema.xml "$pkgdir/usr/share/glib-2.0/schemas"
 
 
 }
