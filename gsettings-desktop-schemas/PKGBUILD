@@ -13,7 +13,8 @@ license=(GPL)
 depends=(glib2 dconf)
 makedepends=(intltool gobject-introspection git gnome-common)
 _commit=a5c759a1d9d7e4825f94da30f0f8fb8abc2e3efb  # tags/3.24.0^0
-source=("git+https://git.gnome.org/browse/gsettings-desktop-schemas#commit=$_commit")
+source=("git+https://git.gnome.org/browse/gsettings-desktop-schemas#commit=$_commit"
+"git+https://github.com/womba/snowdrop-gnome-schema-override")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -36,7 +37,10 @@ build() {
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
-  cd $pkgdir	
-  cd ../../
+  cd ../snowdrop-gnome-schema-override
+  cp org.gnome.schema.override "$pkgdir/usr/share/glib-2.0/schemas/" 
+  cp org.gnome.desktop.background.gschema.xml "$pkgdir/usr/share/glib-2.0/schemas/"
   install -m644 org.gnome.desktop.interface.gschema.xml $pkgdir/usr/share/glib-2.0/schemas
+
+
 }
