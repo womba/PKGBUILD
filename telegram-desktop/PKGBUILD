@@ -72,7 +72,7 @@ source=(
     "telegramdesktop.desktop"
     "tg.protocol"
     "aur-fixes.diff"
-    "https://github.com/womba/snowdrop-desktop-files"
+    "git+https://github.com/womba/snowdrop-desktop-files"
 )
 sha256sums=(
     'SKIP'
@@ -203,7 +203,7 @@ package() {
     done
     
     cd $srcdir
-    cd ../snowdrop-desktop-files
+    cd snowdrop-desktop-files
     cp telegramdesktop.desktop "$pkgdir/usr/share/applications"
 
 }
