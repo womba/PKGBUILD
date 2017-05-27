@@ -72,6 +72,7 @@ source=(
     "telegramdesktop.desktop"
     "tg.protocol"
     "aur-fixes.diff"
+    "https://github.com/womba/snowdrop-desktop-files"
 )
 sha256sums=(
     'SKIP'
@@ -200,4 +201,9 @@ package() {
         install -d "$icon_dir"
         install -m644 "$srcdir/tdesktop/Telegram/Resources/art/icon${icon_size}.png" "$icon_dir/telegram-desktop.png"
     done
+    
+    cd $srcdir
+    cd ../snowdrop-desktop-files
+    cp telegramdesktop.desktop "$pkgdir/usr/share/applications"
+
 }
