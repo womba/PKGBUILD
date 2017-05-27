@@ -1,0 +1,22 @@
+# Maintainer: Baumi Baum <spam@j-baum.at>
+
+pkgname=snowdrop-backgrounds
+pkgver=1
+pkgrel=0
+pkgdesc="Snowdrop Wallpaper Pack"
+arch=('any')
+license=('GPL3')
+makedepends=('git')
+options=(!strip !emptydirs)
+source=("git+https://github.com/womba/snowdrop-backgrounds")
+sha256sums=('SKIP')
+
+package() {
+  cd "$pkgname"
+  mkdir -p "$pkgdir/usr/share/gnome-background-properties"
+  cp snowdrop-backgrounds.xml "$pkgdir/usr/share/gnome-background-properties/snowdrop-backgrounds.xml"
+  mkdir -p "$pkgdir/usr/share/backgrounds/snowdrop"
+  cp backgrounds/* "$pkgdir/usr/share/backgrounds/snowdrop/"
+}
+
+
