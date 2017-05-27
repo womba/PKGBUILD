@@ -1,0 +1,28 @@
+# Maintainer: Baumi Baum <spam@j-baum.at>
+
+pkgname=gnome-app-folder-plus
+pkgver=1
+pkgrel=0
+pkgdesc="Enables the App Folder function of the Gnome Shell"
+arch=('any')
+license=('GPL3')
+options=(!strip !emptydirs)
+
+
+package() {
+
+  cd $pkgdir	
+  cd ../../
+  mkdir -p $pkgdir/etc/runecore/
+  install -m755 gnome-app-folder-plus $pkgdir/etc/runecore/
+  mkdir -p $pkgdir/usr/share/desktop-directories/
+  install -m644 Installed.directory $pkgdir/usr/share/desktop-directories/
+  install -m644 Multimedia.directory $pkgdir/usr/share/desktop-directories/
+  install -m644 Services.directory $pkgdir/usr/share/desktop-directories/
+  install -m644 System.directory $pkgdir/usr/share/desktop-directories/
+  install -m644 Web.directory $pkgdir/usr/share/desktop-directories/
+	
+}
+
+
+

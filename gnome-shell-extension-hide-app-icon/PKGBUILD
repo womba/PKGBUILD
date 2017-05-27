@@ -1,0 +1,25 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+# Put icons always in folder with version and release
+
+pkgname=gnome-shell-extension-hide-app-icon
+pkgver=1
+pkgrel=0
+pkgdesc="Hides the app icon in the gnome shell"
+arch=('any')
+url="https://github.com/michael-rapp/gnome-shell-extension-hide-app-icon"
+license=('GPL v3')
+makedepends=('git')
+depends=('gnome-shell')
+options=(!strip !emptydirs)
+source=("git://github.com/michael-rapp/gnome-shell-extension-hide-app-icon.git")
+sha256sums=('SKIP')
+
+package() {
+  
+  cd gnome-shell-extension-hide-app-icon/hide-app-icon\@mrapp.sourceforge.com
+  mkdir -p $pkgdir/usr/share/gnome-shell/extensions/hide-app-icon\@mrapp.sourceforge.com/schemas
+  cp  	prefs.js metadata.json extension.js convenience.js $pkgdir/usr/share/gnome-shell/extensions/hide-app-icon\@mrapp.sourceforge.com/
+  cp    ./schemas/org.gnome.shell.extensions.hide-app-icon.gschema.xml $pkgdir/usr/share/gnome-shell/extensions/hide-app-icon\@mrapp.sourceforge.com/schemas
+  cp    ./schemas/gschemas.compiled $pkgdir/usr/share/gnome-shell/extensions/hide-app-icon\@mrapp.sourceforge.com/schemas
+}
+

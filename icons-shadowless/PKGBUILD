@@ -1,0 +1,16 @@
+pkgname=icons-shadowless
+pkgver=1.0
+pkgrel=0
+pkgdesc="This is a flat icon-theme Gnome 3.10+. The icons have colourful circular base without shadow."
+arch=(any)
+license=(GPL3)
+makedepends=('git')
+
+source=(git+https://github.com/womba/icons-shadowless-git)
+sha256sums=('SKIP')
+
+package() {
+	cd "$srcdir/icons-shadowless-git"
+	mkdir -p "$pkgdir/usr/share/icons/icons-shadowless"
+	find . -type d -name ".git" -prune -o -type f -exec install -Dm644 '{}' "$pkgdir/usr/share/icons/icons-shadowless/{}" \;
+}
