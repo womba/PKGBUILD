@@ -41,6 +41,7 @@ package() {
   cp org.gnome.gschema.override "$pkgdir/usr/share/glib-2.0/schemas/" 
   cp org.gnome.desktop.background.gschema.xml "$pkgdir/usr/share/glib-2.0/schemas/"
   cp org.gnome.desktop.interface.gschema.xml "$pkgdir/usr/share/glib-2.0/schemas"
+  cp org.gnome.desktop.screensaver.gschema.xml "$pkgdir/usr/share/glib-2.0/schemas"
 
 
 }
