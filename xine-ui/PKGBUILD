@@ -24,6 +24,6 @@ build() {
 package() {
   cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" desktopdir=/usr/share/applications install
-  echo "NoDisplay=true" >> "$pkgdir/usr/share/applications/cups.desktop"
+  echo "NoDisplay=true" >> "$pkgdir/usr/share/applications/xine.desktop"
 
 }
