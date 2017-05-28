@@ -43,7 +43,7 @@ package() {
   make DESTDIR="$pkgdir" install
   cd $srcdir
   cd snowdrop-desktop-files
-  cp telegramdesktop.desktop "$pkgdir/usr/share/applications"
+  cp eog.desktop "$pkgdir/usr/share/applications"
 
 
 
