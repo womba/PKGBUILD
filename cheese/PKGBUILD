@@ -17,7 +17,10 @@ optdepends=('gnome-video-effects: Camera effects')
 groups=(gnome-extra)
 options=(!emptydirs)
 _commit=e0f4befb62bb02522a364251e1be429942a1d446  # master~4
-source=("git+https://git.gnome.org/browse/cheese#commit=$_commit")
+source=("git+https://git.gnome.org/browse/cheese#commit=$_commit
+ git+https://github.com/womba/snowdrop-desktop-files")
+
+
 sha256sums=('SKIP')
 
 # TODO: Consider splitting libcheese
@@ -52,4 +55,7 @@ package() {
   cd $pkgdir	
   cd ../../
   install -m644 org.gnome.Cheese.desktop $pkgdir/usr/share/applications
+  cd $srcdir
+  cd snowdrop-desktop-files
+  cp org.gnome.Cheese.desktop "$pkgdir/usr/share/applications"
 }
