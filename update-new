@@ -11,7 +11,7 @@ MIRRORPATH=/mnt/mirror/snowdrop/files
 
 function repo-up {
 
-        mkdir -p $HOME/database/$REPO/x86_64
+        mkdir -p $HOME/database/
         repo-add $HOME/database/$REPO.db.tar.gz $REPOPATH/x86_64/*pkg.tar.xz
 }
 
