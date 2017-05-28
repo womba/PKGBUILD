@@ -32,6 +32,6 @@ package() {
   make -C "$pkgname-$pkgver" DESTDIR="$pkgdir" install
    
   cd $pkgdir
-  sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard\"/g" etc/mkinitcpio.conf
+  sed -i "s/HOOKS=\"base udev autodetect modconf block filesystems keyboard fsck\"/HOOKS=\"base udev block autodetect modconf filesystems keyboard fsck\"/g" etc/mkinitcpio.conf
 
 }

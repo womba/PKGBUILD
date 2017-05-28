@@ -15,7 +15,9 @@ optdepends=('eog-plugins: Additional features')
 groups=(gnome)
 options=(!emptydirs)
 _commit=c665b86c19cec9e9ec783adb062c387ddb46958c  # tags/3.24.1^0
-source=("git+https://git.gnome.org/browse/eog#commit=$_commit")
+source=("git+https://git.gnome.org/browse/eog#commit=$_commit"
+    "git+https://github.com/womba/snowdrop-desktop-files"
+)
 sha256sums=('SKIP')
 
 pkgver() {
@@ -39,7 +41,10 @@ build() {
 package() {
   cd "$pkgname"
   make DESTDIR="$pkgdir" install
-  cd $pkgdir	
-  cd ../../
-  install -m644 eog.desktop $pkgdir/usr/share/applications
+  cd $srcdir
+  cd snowdrop-desktop-files
+  cp telegramdesktop.desktop "$pkgdir/usr/share/applications"
+
+
+
 }
