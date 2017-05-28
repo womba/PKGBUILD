@@ -1,0 +1,21 @@
+# Maintainer: Baumi Baum <spam@j-baum.at>
+
+pkgname=theme-flatplat-white
+pkgver=1
+pkgrel=0
+pkgdesc="A white version of the Flatplat theme"
+arch=('any')
+license=('GPL2')
+makedepends=('git')
+options=(!strip !emptydirs)
+source=("git+https://github.com/womba/theme-flatplat-white")
+sha256sums=('SKIP')
+
+package() {
+  
+  mkdir -p "$pkgdir/usr/share/themes"
+  cd "$srcdir"
+  cp -r ./* "$pkgdir/usr/share/themes/"
+
+}
+
