@@ -12,7 +12,7 @@
       </description>
     </key>
     <key name="enabled-extensions" type="as">
-      <default>['dash-to-dock@micxgx.gmail.com', 'hide-app-icon@mrapp.sourceforge.com', 'impatience@gfxmonk.net', 'nohotcorner@azuri.free.fr', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net']</default>
+      <default>['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'hide-app-icon@mrapp.sourceforge.com', 'impatience@gfxmonk.net', 'nohotcorner@azuri.free.fr', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'TopIcons@phocean.net']</default>
       <summary>UUIDs of extensions to enable</summary>
       <description>
         GNOME Shell extensions have a UUID property; this key lists extensions
