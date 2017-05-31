@@ -1,6 +1,6 @@
 # Maintainer: Baumi Baum <spam@j-baum.at>
 
-pkgname=snowdrop
+pkgname=theme-snowdrop
 pkgver=1
 pkgrel=0
 pkgdesc="An modified combination of the flatplat-blue gtk-theme and the paper gnome-shell"
@@ -8,7 +8,7 @@ arch=('any')
 license=('GPL2')
 makedepends=('git')
 options=(!strip !emptydirs)
-source=("git+https://github.com/womba/gtk-theme-snowdrop")
+source=("git+https://github.com/womba/theme-snowdrop")
 sha256sums=('SKIP')
 
 package() {
