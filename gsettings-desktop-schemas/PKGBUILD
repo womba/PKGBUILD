@@ -45,3 +45,5 @@ package() {
 
 
 }
+sha256sums=('SKIP'
+            'SKIP')
