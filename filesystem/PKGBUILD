@@ -157,9 +157,12 @@ package() {
 	# remove conflict with systemd
 	rm usr/share/factory/etc/nsswitch.conf
 
+	# Autostart at Graphical login
         cd $pkgdir
         cd ../../
         mkdir $pkgdir/etc/runecore/
         install -m644 sample $pkgdir/etc/runecore/
 
+	# Hostname configuration for cups
+	install -m644 nsswitch.conf $pkgdir/etc/
 }
