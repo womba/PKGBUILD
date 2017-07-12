@@ -22,5 +22,5 @@ package() {
   install -m644 $srcdir/corn-mirrorlist $pkgdir/etc/pacman.d/
 }
 
-md5sums=('55e9aa6a83583d0c3759feae8d41caf4')
-sha256sums=('afc07614a42ee488297b300c0959028e65fcd01068415ea8184575ae31df6bb8')
+md5sums=('4a509f4692d2e27140c488b3075abd3d')
+sha256sums=('458669de18fedb468b3ff2e666815850ac2daef6cd6f94ca8cd7e2327a1a5e19')
