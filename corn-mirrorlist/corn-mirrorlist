@@ -1,0 +1,6 @@
+##
+## Corn repository mirrorlist
+##
+
+## Raspberry Pi
+Server = http://192.168.1.111/mirror/snowdrop/files/$repo/os/$arch

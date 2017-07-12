@@ -1,0 +1,26 @@
+# $Id$
+# Maintainer: Baumi Baum <spam@j-baum.at>
+
+pkgname=corn-mirrorlist
+pkgver=1
+pkgrel=1
+pkgdesc="Corn mirror list for use by pacman"
+arch=('any')
+license=('GPL')
+backup=(etc/pacman.d/corn-mirrorlist)
+source=(corn-mirrorlist)
+
+# NOTE on building this package:
+# * Go to the trunk/ directory
+# * Run bash -c ". PKGBUILD; updatelist"
+# * Update the checksums, update pkgver
+# * Build the package
+
+
+package() {
+  mkdir -p $pkgdir/etc/pacman.d
+  install -m644 $srcdir/corn-mirrorlist $pkgdir/etc/pacman.d/
+}
+
+md5sums=('55e9aa6a83583d0c3759feae8d41caf4')
+sha256sums=('afc07614a42ee488297b300c0959028e65fcd01068415ea8184575ae31df6bb8')
