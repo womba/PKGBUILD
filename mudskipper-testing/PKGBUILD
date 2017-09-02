@@ -1,0 +1,21 @@
+# Maintainer: Baumi Baum <spam@j-baum.at>
+
+pkgname=mudskipper-testing
+pkgver=1
+pkgrel=0
+pkgdesc="Installation Script for the Corn Project"
+arch=('any')
+license=('GPL2')
+makedepends=('git')
+options=(!strip !emptydirs)
+source=("git+https://github.com/womba/mudskipper-testing")
+sha256sums=('SKIP')
+
+package() {
+  
+  mkdir -p "$pkgdir"
+  cd "$srcdir"
+  cp -r ./mudskipper-testing/* "$pkgdir/"
+
+}
+
