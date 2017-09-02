@@ -1,0 +1,59 @@
+#!/bin/bash
+
+SSH=192.168.1.111
+SSHUSER=pi
+
+sudo sshfs $SSHUSER@$SSH:/var/www/html /mnt -o allow_other
+
+MIRRORPATH=/mnt/mirror/snowdrop/files
+
+
+
+function repo-up {
+
+        mkdir -p $HOME/database/
+        repo-add $HOME/database/$REPO.db.tar.gz $REPOPATH/x86_64/*pkg.tar.xz
+}
+
+clear
+echo Updating Stable Repository? \(y/n\)
+read ANSWER
+
+if [ $ANSWER = y ]
+then
+	REPO=stable
+	REPOPATH=$MIRRORPATH/$REPO/os
+	mkdir -p $HOME/database
+        cp $REPOPATH/x86_64/stable.db* $HOME/database
+	cp $REPOPATH/x86_64/stable.files*  $HOME/database
+	repo-up
+fi
+clear
+
+echo Updating Testing Repository? \(y/n\)
+read ANSWER
+
+if [ $ANSWER = y ]
+then
+        REPO=testing
+        REPOPATH=$MIRRORPATH/$REPO/os
+        mkdir -p $HOME/database
+        cp $REPOPATH/x86_64/testing.db* $HOME/database
+        cp $REPOPATH/x86_64/testing.files*  $HOME/database
+        repo-up
+fi
+
+clear
+echo Transfer Update to Server? \(y/n\)
+read ANSWER
+
+if [ $ANSWER = y ]
+then
+	scp -r $HOME/database $SSHUSER@$SSH:/home/pi
+fi
+
+rm -R $HOME/database
+sudo fusermount -u /mnt
+clear
+
+
