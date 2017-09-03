@@ -1,0 +1,24 @@
+# Maintainer: Baumi Baum <spam@j-baum.at>
+# Put icons always in folder with version and release
+
+pkgname=corn-appstream-data
+pkgver=1
+pkgrel=0
+pkgdesc="Corn application database for AppStream-based software centers"
+arch=('any')
+license=('GPL')
+makedepends=('git')
+source=("git+https://github.com/womba/corn-appstream-data")
+sha256sums=('SKIP')
+
+package() {
+  
+  mkdir -p ${pkgdir}/usr/share/app-info
+  rm ${srcdir}/corn-appstream-data/LICENSE
+  rm ${srcdir}/corn-appstream-data/xmls/*/0_create-data
+  rm -r ${srcdir}/corn-appstream-data/xmls/*/src
+  cp -r ${srcdir}/corn-appstream-data/* ${pkgdir}/usr/share/app-info
+ 
+}
+
+
